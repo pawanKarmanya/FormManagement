@@ -24,7 +24,8 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ">
-                        <li class="active"><a href="../index.php">Create User</a></li>
+                        <li class="active"><a href="adminLogin.php">Home</a></li>
+                        <li ><a href="admincreateuser.php">Create User</a></li>
 
                     </ul>
 

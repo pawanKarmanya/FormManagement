@@ -200,7 +200,7 @@ $(document).ready(function () {
         var errorzip = 0;
         var zipvalue = $("#zipcode").val();
         var validzip = charvalidforphone(zipvalue);
-        if(zipvalue.length>6){
+        if(zipvalue.length==6){
         if (!validzip) {
             errorzip = 1;
             $("#zipcodepara").html("Enter zipcode numbers");

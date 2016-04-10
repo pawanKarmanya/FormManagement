@@ -1,8 +1,19 @@
 <?php
-include ('supportingFiles/connect.php');
+include ('connect.php');
 session_start();
 
-if(isset($_POST["submitSignUp"])){
+
+$id=$_SESSION["id"];
+
+
+if(isset($_POST["adminCreateUser"])){
+    
+    
+$queryvalidate="select FirstName from UserTable where type='admin' and Id='$id'";
+$resultvalidate=mysqli_query($link, $queryvalidate);
+$rowvalidate=mysqli_fetch_row($resultvalidate);
+if($rowvalidate){
+    
 $firstName=$_POST["firstName"];
 $lastName=$_POST["lastName"];
 $emailAddress=$_POST["emailAddress"];
@@ -14,7 +25,7 @@ $resultvalidate=mysqli_query($link,$queryvalidate);
 $row=mysqli_fetch_row($resultvalidate); 
 if($row){
     
-    $error= $row[0]." Your Email Id is already registered";
+    $error= " This Email Id is already registered";
 }
 else{
 $type="User";
@@ -24,11 +35,11 @@ if(!$result){
     $error="Error while registering Try ones again";
 }
 else{
- $message=$firstName." you are successfully registered please login"; 
+ $message=$firstName."Id is successfully registered"; 
  
  
-require_once('PHPMailer-master/class.phpmailer.php');
-include("PHPMailer-master/class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
+require_once('../PHPMailer-master/class.phpmailer.php');
+include("../PHPMailer-master/class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
  
 $mail             = new PHPMailer();
 
@@ -66,49 +77,11 @@ if(!$mail->Send()) {
 $error.= $mail->ErrorInfo;
 
 }
- 
- 
- 
- 
 }
 }
 }
-if(isset($_POST["loginSubmit"])){
- $userEmail=$_POST["userEmail"];  
- $userPassword=$_POST["userPassword"];
 
-$queryUserLogIn="select Id from UserTable where EmailAddress='$userEmail' and Password='$userPassword'";
-$resultUserLogIn=mysqli_query($link,$queryUserLogIn);
-$rowUserLogIn=mysqli_fetch_row($resultUserLogIn);
-if(!$rowUserLogIn){
-    $error="Invalid Email and password";
-}
  else {
-     
- 
- $_SESSION["id"]=$rowUserLogIn[0];
-     header("Location:supportingFiles/userLoginSuccess.php");
+     header("Location:../index.php");
 }
 }
-
-
-if(isset($_POST["adminLogIn"])){
- $adminEmail=$_POST["adminEmail"];  
- $adminPassword=$_POST["adminPassword"];
-
-$queryAdminLogIn="select Id from UserTable where EmailAddress='$adminEmail' and Password='$adminPassword'";
-$resultAdminLogIn=mysqli_query($link,$queryAdminLogIn);
-$rowAdminLogIn=mysqli_fetch_row($resultAdminLogIn);
-if(!$rowAdminLogIn){
-    $error="Invalid Email and password";
-}
- else {
-     
- 
- $_SESSION["id"]=$rowAdminLogIn[0];
-     header("Location:supportingFiles/adminLoginSuccess.php");
-}
-}
-
-
-?>

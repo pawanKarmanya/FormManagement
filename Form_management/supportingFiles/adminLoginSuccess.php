@@ -4,7 +4,7 @@ session_start();
 $id=$_SESSION["id"];
 $queryAdminLogIn="select FirstName from UserTable where Id='$id'";
 $resultAdminLogIn=mysqli_query($link,$queryAdminLogIn);
-$row=mysqli_fetch_row($link,$resultAdminLogIn);
+$row=mysqli_fetch_row($resultAdminLogIn);
 ?>
 <html>
     <head>

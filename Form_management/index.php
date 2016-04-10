@@ -1,4 +1,8 @@
-<?php include ('submit.php');?>
+<?php 
+session_start();
+session_destroy();
+include ('submit.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -132,28 +136,8 @@
         </div>
 
 
-        <button type="button" class="btn btn-info submitbutton" data-toggle="modal" data-target="#myModal">SUBMIT</button>
 
-        <div class="container">
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title" id="header"></h4>
-                        </div>
-                        <div class="modal-body">
-                            <p id="result"></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" id="close1">Close</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal" id="closereset">CLOSE</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
 
     </body>
 
