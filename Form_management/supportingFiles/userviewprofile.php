@@ -1,6 +1,7 @@
 <?php include('connect.php');
 session_start();
 $id=$_SESSION["id"];
+if($id){
 $query="select * from UserTable where Id='$id'";
 $result=mysqli_query($link,$query);
 $row=mysqli_fetch_row($result);
@@ -14,7 +15,10 @@ $city=$row[7];
 $state=$row[8];
 $country=$row[9];
 $zipcode=$row[10];
-
+}
+else{
+    header("Location:../index.php");
+}
 ?>
 <html>
     <head>

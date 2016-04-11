@@ -2,10 +2,14 @@
 include ('connect.php');
 session_start();
 $id=$_SESSION["id"];
+if($id){
 $queryUserLogIn="select FirstName from UserTable where Id='$id'";
 $resultUserLogIn=mysqli_query($link,$queryUserLogIn);
 $row=mysqli_fetch_row($resultUserLogIn);
-
+}
+else {
+    header("Location:../index.php");
+}
 ?>
 <html>
     <head>

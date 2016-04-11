@@ -1,6 +1,7 @@
 <?php
 session_start();
 $id=$_SESSION["id"];
+if($id){
 $query="select * from UserTable where Id='$id'";
 $result=mysqli_query($link, $query);
 $row=mysqli_fetch_row($result);
@@ -32,4 +33,8 @@ if(isset($_POST["userEdit"])){
         $error="Profile could not be Updated Please try again";
     }
 }}
+}
+else{
+       header("Location:../index.php");
+}
 ?>
