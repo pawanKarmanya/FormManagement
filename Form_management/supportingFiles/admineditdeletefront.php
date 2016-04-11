@@ -19,67 +19,67 @@
                 <div class="col-md-12 topmore">
                     <div class="col-md-3 col-md-offset-2">
                         <label>First Name:</label>
-                        <input type="text" class="form-control" name="firstName" id="firstName">
+                        <input type="text" class="form-control" name="firstName" id="firstName" value="<?php echo $userFirstName;?>" required>
                     </div>
                     
                     <div class="col-md-3 col-md-offset-1">
                         <label>Last Name:</label>
-                        <input type="text" class="form-control" name="lastName" id="lastName">
+                        <input type="text" class="form-control" name="lastName" id="lastName" value="<?php echo $userLastName;?>" required>
                     </div>
                 </div>
                     <div class="col-md-12 top">
                     <div class="col-md-3 col-md-offset-2">
                         <label>Email Address:</label>
-                        <input type="text" class="form-control" name="emailAddress" id="emailAddress">
+                        <input type="text" class="form-control" name="emailAddress" id="emailAddress" value="<?php echo $userEmailAddress;?>" required>
                     </div>
                     
                     <div class="col-md-3 col-md-offset-1">
                         <label>Mobile Number:</label>
-                        <input type="text" class="form-control" name="mobileNumber" id="mobileNumber">
+                        <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" value="<?php echo $userMobileNumber;?>" required>
                     </div>
                 </div>
                     
                     <div class="col-md-12 top">
                     <div class="col-md-3 col-md-offset-2">
                         <label>Address Line 1:</label>
-                        <textarea class="form-control" name="addressLineOne" id="addressLineOne"  required></textarea>
+                        <textarea class="form-control" name="addressLineOne" id="addressLineOne"  required><?php echo $userAddressOne;?></textarea>
                     </div>
                     
                     <div class="col-md-3 col-md-offset-1">
                         <label>Address Line 2:</label>
-                        <textarea class="form-control" name="addressLineTwo" id="addressLineTwo" required></textarea>
+                        <textarea class="form-control" name="addressLineTwo" id="addressLineTwo" required><?php echo $userAddressTwo;?></textarea>
                     </div>
                 </div>
                     
                     <div class="col-md-12 top">
                     <div class="col-md-3 col-md-offset-2">
                         <label>City:</label>
-                        <input type="text" class="form-control" name="city" id="city" required>
+                        <input type="text" class="form-control" name="city" id="city" value="<?php echo $userCity;?>" required>
                         <p id="citypara"></p>
                     </div>
                     
                     <div class="col-md-3 col-md-offset-1">
                         <label>State:</label>
-                        <input type="text" class="form-control" name="state" id="state" required>
+                        <input type="text" class="form-control" name="state" id="state" value="<?php echo $userState;?>" required>
                         <p id="statepara"></p>
                     </div>
                 </div>
                     <div class="col-md-12 top">
                     <div class="col-md-3 col-md-offset-2">
                         <label>Country:</label>
-                        <input type="text" class="form-control" name="country" id="country"  required>
+                        <input type="text" class="form-control" name="country" id="country" value="<?php echo $userCountry;?>" required>
                         <p id="countrypara"></p>
                     </div>
                     
                     <div class="col-md-3 col-md-offset-1">
                         <label>ZipCode:</label>
-                        <input type="tel" class="form-control" maxlength="6" name="zipcode" id="zipcode" required>
+                        <input type="tel" class="form-control" maxlength="6" name="zipcode" id="zipcode" value="<?php echo $userZipCode;?>" required>
                         <p id="zipcodepara"></p>
                     </div>
                 </div>
                     <div class="col-md-12 top">
                         <div class="col-md-1 col-md-offset-4">
-                            <input type="submit" name='adminCreateUser' value="SUBMIT" class="btn btn-success"></div>
+                            <input type="submit" name='adminEditFront' value="SUBMIT" class="btn btn-success"></div>
                             <div class="col-md-1 col-md-offset-1">
                             <input type="reset" name="reset" class="btn btn-success" value="RESET">
                             </div>

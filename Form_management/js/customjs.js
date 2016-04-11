@@ -281,7 +281,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#confirmPassword").focusout( function(){
+    $("#confirmPassword").on("focusout keyup", function(){
         
         var password=$("#password").val();
         var confirmPassword=$("#confirmPassword").val();

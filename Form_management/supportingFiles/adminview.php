@@ -1,3 +1,5 @@
+
+   
 <?php
 include('connect.php');
 session_start();
@@ -17,11 +19,17 @@ if($rowvalidate){
   $mobileNumber=$row[4];
   $addressLineOne=$row[5];
   $addressLineTwo=$row[6];
+  
   $city=$row[7];
   $state=$row[8];
   $country=$row[9];
   $zipcode=$row[10];
-  
+  $variable="";
+  $array=explode(",",$addressLineTwo);
+  foreach($array as $x){
+      $variable.=$x;
+  }
+  $variable.=$city;
   if(isset($_POST["adminEdit"])){
       header("Location:admineditdeletefront.php");
   }
@@ -34,11 +42,12 @@ if($rowvalidate){
       }
   }
   
-  
-  
 }
  else {
      header("Location:../index.php");
 }
 
 ?>
+
+
+  

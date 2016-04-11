@@ -5,9 +5,9 @@
         <title>User Login success page</title>
         
         <script type="text/javascript" src="../js/jquery.js"></script>
-        
+        <script type="text/javascript" src="../js/dashboard.js"></script> 
         <script type="text/javascript" src="../js/customjs.js"></script>
-        <script type="text/javascript" src="../js/dashboard.js"></script>
+       
     </head>
     <body>
         <nav class="admindashboard">
@@ -41,40 +41,15 @@
                     
                     <div class="col-md-12 top">
                     <div class="col-md-3 col-md-offset-2">
-                        <label>Address Line 1:</label>
-                        <textarea class="form-control" name="addressLineOne" id="addressLineOne"  required></textarea>
+                        <label>Password:</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                        <p id="passwordpara"></p>
                     </div>
                     
                     <div class="col-md-3 col-md-offset-1">
-                        <label>Address Line 2:</label>
-                        <textarea class="form-control" name="addressLineTwo" id="addressLineTwo" required></textarea>
-                    </div>
-                </div>
-                    
-                    <div class="col-md-12 top">
-                    <div class="col-md-3 col-md-offset-2">
-                        <label>City:</label>
-                        <input type="text" class="form-control" name="city" id="city" required>
-                        <p id="citypara"></p>
-                    </div>
-                    
-                    <div class="col-md-3 col-md-offset-1">
-                        <label>State:</label>
-                        <input type="text" class="form-control" name="state" id="state" required>
-                        <p id="statepara"></p>
-                    </div>
-                </div>
-                    <div class="col-md-12 top">
-                    <div class="col-md-3 col-md-offset-2">
-                        <label>Country:</label>
-                        <input type="text" class="form-control" name="country" id="country"  required>
-                        <p id="countrypara"></p>
-                    </div>
-                    
-                    <div class="col-md-3 col-md-offset-1">
-                        <label>ZipCode:</label>
-                        <input type="tel" class="form-control" maxlength="7" name="zipcode" id="zipcode" required>
-                        <p id="zipcodepara"></p>
+                        <label>Confirm Password:</label>
+                        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" required>
+                        <p id="confirmpasswordpara"></p>
                     </div>
                 </div>
                     <div class="col-md-12 top">
