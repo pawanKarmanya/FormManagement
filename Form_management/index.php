@@ -6,7 +6,7 @@ include ('submit.php');
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Form with Bootstrap</title>
+        <title>Form Management</title>
         <meta charset="UTF-8">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/formcss.css" rel="stylesheet">
