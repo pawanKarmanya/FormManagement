@@ -2,6 +2,21 @@
 include ('supportingFiles/connect.php');
 session_start();
 
+if(isset($_SESSION["id"])){
+    $notLogoutQuery="select type from UserTable where Id='".$_SESSION["id"]."'";
+    $notLogoutResult=mysqli_query($link,$notLogoutQuery);
+    $notLogoutRow=mysqli_fetch_row($notLogoutResult);
+    if($notLogoutRow[0]=="User"){
+        header("Location:supportingFiles/userLoginSuccess.php");
+    }
+    if($notLogoutRow[0]=="admin"){
+        header("Location:supportingFiles/adminLoginSuccess.php");
+    }
+    
+}
+
+
+
 if(isset($_POST["submitSignUp"])){
 $firstName=$_POST["firstName"];
 $lastName=$_POST["lastName"];

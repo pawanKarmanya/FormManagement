@@ -32,7 +32,7 @@
 
 
                     <ul class="nav navbar-nav pull-right">
-                        <li class="active"><a href="../index.php"><span class="glyphicon glyphicon-off"></span> LogOut</a></li>
+                        <li class="active"><a href="logout.php?id=1"><span class="glyphicon glyphicon-off"></span> LogOut</a></li>
 
                     </ul>
 

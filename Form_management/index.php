@@ -1,6 +1,4 @@
 <?php 
-session_start();
-session_destroy();
 include ('submit.php');
 ?>
 <!DOCTYPE html>
