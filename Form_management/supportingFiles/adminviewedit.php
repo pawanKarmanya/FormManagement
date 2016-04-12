@@ -5,7 +5,7 @@
 
         <link href="../css/formcss.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<!--        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
         <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script type="text/javascript" src="../js/dashboard.js"></script>
         <script type="text/javascript">
@@ -110,7 +110,7 @@
             <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Location</button>
         </div>
 
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal" id="myModal" role="dialog">
             <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
@@ -121,7 +121,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <div id="googleMap" style="width:700px;height:500px;"></div>
+                        <div id="googleMap" style="align:center; height:400px;"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

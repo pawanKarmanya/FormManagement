@@ -133,7 +133,7 @@ if ($id) {
                     </div>
                     <div class="modal-body">
                         
-<div id="googleMap" style="width:700px;height:500px;"></div>
+<div id="googleMap" style="height:500px;"></div>
                         
                     </div>
                     <div class="modal-footer">
