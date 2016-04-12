@@ -35,7 +35,7 @@
                     
                     <div class="col-md-3 col-md-offset-1">
                         <label>Mobile Number:</label>
-                        <input type="text" class="form-control" name="mobileNumber" id="mobileNumber">
+                        <input type="tel" class="form-control" maxlength="10" name="mobileNumber" id="mobileNumber">
                     </div>
                 </div>
                     

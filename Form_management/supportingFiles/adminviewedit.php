@@ -107,7 +107,7 @@
 
         <div class="col-md-2 col-md-offset-5 topmore">
 
-            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Location</button>
+            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-map-marker"></span> Location</button>
         </div>
 
         <div class="modal" id="myModal" role="dialog">

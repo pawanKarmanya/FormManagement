@@ -13,7 +13,7 @@
         <nav class="navbar-inverse navbar-fixed">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Regt Page</a>
+                    <a class="navbar-brand">Form Management</a>
                     <button type="button" class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="sr-only"> Toggle</span>
                         <span class="icon-bar"></span>

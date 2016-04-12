@@ -19,7 +19,7 @@ include ('submit.php');
         <nav class="navbar-inverse navbar-fixed">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Regt Page</a>
+                    <a class="navbar-brand"></a>
                     <button type="button" class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="sr-only"> Toggle</span>
                         <span class="icon-bar"></span>
@@ -31,8 +31,8 @@ include ('submit.php');
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a id="userLogInLi">User LogIn</a></li>
-                        <li><a id="adminLogInLi">Admin LogIn</a></li>
+                        <li><a id="userLogInLi">UserLogIn</a></li>
+                        <li><a id="adminLogInLi">AdminLogIn</a></li>
                     </ul>
 
                     <form class="navbar-form navbar-right loginform" method="post" id="userLogIn">
