@@ -2,8 +2,12 @@
 <html>
     <head>
         <title>Admin Create User</title>
+        
+        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/dashboard.js"></script> 
         <script type="text/javascript" src="../js/customjs.js"></script>
 

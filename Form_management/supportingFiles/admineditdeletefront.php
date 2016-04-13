@@ -86,7 +86,7 @@
                     </div>
                 </form>
                 <div class="col-md-8 top col-md-offset-1">
-                    <?php if(isset($Error)){echo "<div class='alert alert-danger'>".Error."</div>";}?>
+                    <?php if(isset($Error)){echo "<div class='alert alert-danger'>".$Error."</div>";}?>
                     <?php if(isset($Message)){echo "<div class='alert alert-success'>".$Message."</div>";}?>
                 </div>
             </div>

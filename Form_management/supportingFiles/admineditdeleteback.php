@@ -3,10 +3,6 @@
 include ('connect.php');
 session_start();
 $Id = $_SESSION["id"];
-$QueryValidate = "select FirstName from UserTable where type='admin' and Id='$Id'";
-$ResultValidate = mysqli_query($Link, $QueryValidate);
-$RowValidate = mysqli_fetch_row($ResultValidate);
-if ($RowValidate) {
     $Email = $_SESSION["email"];
     $QueryUser = "select * from UserTable where EmailAddress='$Email'";
     $ResultUser = mysqli_query($Link, $QueryUser);
@@ -47,12 +43,26 @@ if ($RowValidate) {
     else if (!preg_match("/^[a-zA-Z ]*$/", $LastName)) {
         $Error = "Characters and white space is allowed in Last Name";
     }
+    else if (!preg_match("/^[a-zA-Z ]*$/", $City)) {
+        $Error = "No number and special characters in City Name";
+    }
+    else if (!preg_match("/^[a-zA-Z ]*$/", $State)) {
+        $Error = "No number and special characters in State Name";
+    }
+    elseif($AddressOne==""){
+        $Error = "Address should not be empty";
+    }
     else if (!filter_var($EmailAddress, FILTER_VALIDATE_EMAIL)) {
         $Error = "Invalid Email Address";
     }
     
+    
     else if(!preg_match("/^[1-9][0-9]{9,9}$/", $MobileNumber)){
         $Error="Phone number should be 10 number";
+    }
+    
+    else if(!preg_match("/^[1-9][0-9]{5,5}$/", $Zipcode)){
+        $Error="Zipcode length should be 6";
     }
     else{
         $Query = "update UserTable set FirstName='$FirstName', LastName='$LastName', EmailAddress='$EmailAddress', MobileNumber='$MobileNumber', AddressLineOne='$AddressOne', AddressLineTwo='$AddressTwo', City='$City', State='$State', Country='$Country', ZipCode='$Zipcode' where EmailAddress='$Email'";
@@ -63,7 +73,7 @@ if ($RowValidate) {
             $Message = $EmailAddress . " Id is successfully Edited";
         }
     }
-} else {
-    header("Location:../index.php");
-}}
+}
+
+
 ?>

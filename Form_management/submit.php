@@ -5,7 +5,7 @@ session_start();
 
 if (isset($_SESSION["id"])) {
 
-    $ValidateLogoutQuery = "select type from UserTable where Id='" . $_SESSION["id"] . "'";
+    $ValidateLogoutQuery = "select Type from UserTable where Id='" . $_SESSION["id"] . "'";
     $ValidateLogoutResult = mysqli_query($Link, $ValidateLogoutQuery);
     $ValidateLogoutRow = mysqli_fetch_row($ValidateLogoutResult);
     if ($ValidateLogoutRow[0] == "User") {
@@ -47,7 +47,7 @@ if (isset($_POST["submitSignUp"])) {
         $Error = $Row[0] . " Your Email Id is already registered";
     } else {
         $Type = "User";
-        $Query = "insert into UserTable(FirstName, LastName, EmailAddress, MobileNumber, Password, type)values('$FirstName','$LastName','$EmailAddress','$MobileNumber','$Password','$Type')";
+        $Query = "insert into UserTable(FirstName, LastName, EmailAddress, MobileNumber, Password, Type)values('$FirstName','$LastName','$EmailAddress','$MobileNumber','$Password','$Type')";
         $Result = mysqli_query($Link, $Query);
         if (!$Result) {
             $Error = "Error while registering Try ones again";

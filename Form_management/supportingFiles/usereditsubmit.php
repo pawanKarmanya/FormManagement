@@ -24,6 +24,24 @@ if ($Id) {
             $EditState = $_POST["state"];
             $EditCountry = $_POST["country"];
             $EditZipCode = $_POST["zipcode"];
+            
+            if (!preg_match("/^[a-zA-Z ]*$/", $EditCity)) {
+        $Error = "No number and special characters in City Name";
+    }
+    else if (!preg_match("/^[a-zA-Z ]*$/", $EditState)) {
+        $Error = "No number and special characters in State Name";
+    }
+    elseif($EditAddressOne==""){
+        $Error = "Address should not be empty";
+    }
+    
+    else if(!preg_match("/^[1-9][0-9]{5,5}$/", $EditZipCode)){
+        $Error="Zipcode length should be 6";
+    }
+            
+        else{   
+            
+            
             $QueryEdit = "update UserTable set AddressLineOne='$EditAddressOne', AddressLineTwo='$EditAddressTwo', City='$EditCity', State='$EditState', Country='$EditCountry', ZipCode='$EditZipCode' where Id='$Id'";
             $EditResult = mysqli_query($Link, $QueryEdit);
             if ($EditResult) {
@@ -32,7 +50,7 @@ if ($Id) {
             } else {
                 $Error = "Profile could not be Updated Please try again";
             }
-        }
+        }}
     }
 } else {
     header("Location:../index.php");

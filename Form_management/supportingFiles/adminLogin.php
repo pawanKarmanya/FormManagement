@@ -2,11 +2,11 @@
 include ('connect.php');
 session_start();
 $Id = $_SESSION["id"];
-$QueryValidate = "select FirstName from UserTable where type='admin' and Id='$Id'";
+$QueryValidate = "select FirstName from UserTable where Type='admin' and Id='$Id'";
 $ResultValidate = mysqli_query($Link, $QueryValidate);
 $RowValidate = mysqli_fetch_row($ResultValidate);
 if ($RowValidate) {
-    $Query = "select FirstName, LastName, EmailAddress from UserTable where type='user'";
+    $Query = "select FirstName, LastName, EmailAddress from UserTable where Type='user'";
     $Result = mysqli_query($Link, $Query);
 } else {
     header("Location:../index.php");
@@ -34,8 +34,7 @@ if ($RowValidate) {
 }
 ?>];
         </script>
-
-        <table id="example" class="display" width="100%"></table>
+        <table id="example" class="display " width="100%"></table>
 
     </body>
 </html>

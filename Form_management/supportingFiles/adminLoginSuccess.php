@@ -2,7 +2,7 @@
 include ('connect.php');
 session_start();
 $Id=$_SESSION["id"];
-$QueryValidate = "select FirstName from UserTable where type='admin' and Id='$Id'";
+$QueryValidate = "select FirstName from UserTable where Type='admin' and Id='$Id'";
 $ResultValidate = mysqli_query($Link, $QueryValidate);
 $RowValidate = mysqli_fetch_row($ResultValidate);
 if ($RowValidate) {

@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>User Details</title>
-
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/formcss.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
-<!--        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
         <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/dashboard.js"></script>
         <script type="text/javascript">
 
@@ -29,7 +29,7 @@
                     }
                     ?></div>
                 <form class="form-horizontal" method="post">
-                    <div class="col-md-12 topmore">
+                    <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>First Name:</label>
                             <input type="text" class="form-control" value="<?php echo $FirstName; ?>" disabled >
