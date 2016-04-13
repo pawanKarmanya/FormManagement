@@ -5,7 +5,7 @@ include ('passwordforgot.php');
 <html>
     <head>
         <title>Forgot Password</title>
-        
+
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/formcss.css" rel="stylesheet">
 
@@ -16,7 +16,7 @@ include ('passwordforgot.php');
         <nav class="navbar-inverse navbar-fixed">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Regt Page</a>
+                    <a class="navbar-brand">Form Management</a>
                     <button type="button" class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="sr-only"> Toggle</span>
                         <span class="icon-bar"></span>
@@ -28,7 +28,7 @@ include ('passwordforgot.php');
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../index.php">Home</a></li>
-                       
+
                     </ul>
 
                 </div>
@@ -40,11 +40,11 @@ include ('passwordforgot.php');
                 <div class="form-group topmore">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="forgotEmail">Email:</label>
                     <div class="col-sm-6">
-                        <input type="email" id="forgotEmail" name="forgotEmail" class="form-control" value="<?php if(isset($email))echo $email;?>" required>
-                        
+                        <input type="email" id="forgotEmail" name="forgotEmail" class="form-control" value="<?php if (isset($Email)) echo $Email; ?>" required>
+
                     </div>
-                    
-                    
+
+
                 </div>
                 <div class="form-group">
                     <div class="col-md-3 col-md-offset-5">
@@ -52,14 +52,16 @@ include ('passwordforgot.php');
                     </div>
                 </div>
             </form>
+            <div class="col-md-6 col-md-offset-3">
             <?php
-                    if(isset($error)){echo '<div class="alert alert-danger">'.$error.'</div>';
-                    }
-                    if(isset($message)){echo '<div class="alert alert-success">'.$message.'</div>';
-                    }
-                    
-                    ?>
+            if (isset($Error)) {
+                echo '<div class="alert alert-danger">' . $Error . '</div>';
+            }
+            if (isset($Message)) {
+                echo '<div class="alert alert-success">' . $Message . '</div>';
+            }
+            ?></div>
     </body>
-    
+
 </html>
 

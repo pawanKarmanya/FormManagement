@@ -1,11 +1,11 @@
 <?php
 include ('connect.php');
 session_start();
-$id = $_SESSION["id"];
-if ($id) {
-    $queryUserLogIn = "select FirstName from UserTable where Id='$id'";
-    $resultUserLogIn = mysqli_query($link, $queryUserLogIn);
-    $row = mysqli_fetch_row($resultUserLogIn);
+$Id = $_SESSION["id"];
+if ($Id) {
+    $QueryUserLogIn = "select FirstName from UserTable where Id='$Id'";
+    $ResultUserLogIn = mysqli_query($Link, $QueryUserLogIn);
+    $Row = mysqli_fetch_row($ResultUserLogIn);
 } else {
     header("Location:../index.php");
 }
@@ -24,7 +24,7 @@ if ($id) {
         </nav>
         <div class="container">
             <div class="col-md-3 col-md-offset-3">
-                <h3>Welcome :<?php echo $row[0]; ?></h3>
+                <h3>Welcome :<?php echo $Row[0]; ?></h3>
             </div>
             <div class="col-md-10 col-md-offset-2">
                 <h1>Login Successful <a href="userLogin.php">Click me</a></h1>

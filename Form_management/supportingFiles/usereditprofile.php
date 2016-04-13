@@ -12,7 +12,6 @@ include ('usereditsubmit.php');
     </head>
     <body>
         <nav class="userdashboard">
-
         </nav>
         <div class="container">
             <div class="row">
@@ -20,61 +19,61 @@ include ('usereditsubmit.php');
                     <div class="col-md-12 topmore">
                         <div class="col-md-3 col-md-offset-2">
                             <label>First Name:</label>
-                            <input type="text" class="form-control" value="<?php echo $firstName; ?>" disabled>
+                            <input type="text" class="form-control" value="<?php echo $FirstName; ?>" disabled>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>Last Name:</label>
-                            <input type="text" class="form-control" value='<?php echo $lastName; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $LastName; ?>' disabled>
                         </div>
                     </div>
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>Email Address:</label>
-                            <input type="text" class="form-control" value='<?php echo $emailAddress; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $EmailAddress; ?>' disabled>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>Mobile Number:</label>
-                            <input type="text" class="form-control" value='<?php echo $mobileNumber; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $MobileNumber; ?>' disabled>
                         </div>
                     </div>
 
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>Address Line 1:</label>
-                            <textarea class="form-control" name="addressLineOne"  required><?php echo $addressLineOne; ?></textarea>
+                            <textarea class="form-control" name="addressLineOne"  required><?php echo $AddressLineOne; ?></textarea>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>Address Line 2:</label>
-                            <textarea class="form-control" name="addressLineTwo"  required><?php echo $addressLineTwo; ?></textarea>
+                            <textarea class="form-control" name="addressLineTwo"  required><?php echo $AddressLineTwo; ?></textarea>
                         </div>
                     </div>
 
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>City:</label>
-                            <input type="text" class="form-control" name="city" value='<?php echo $city; ?>' id="city" required>
+                            <input type="text" class="form-control" name="city" value='<?php echo $City; ?>' id="city" required>
                             <p id="citypara"></p>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>State:</label>
-                            <input type="text" class="form-control" name="state" id="state" value='<?php echo $state; ?>' required>
+                            <input type="text" class="form-control" name="state" id="state" value='<?php echo $State; ?>' required>
                             <p id="statepara"></p>
                         </div>
                     </div>
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>Country:</label>
-                            <input type="text" class="form-control" name="country" id="country" value='<?php echo $country; ?>' required>
+                            <input type="text" class="form-control" name="country" id="country" value='<?php echo $Country; ?>' required>
                             <p id="countrypara"></p>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>ZipCode:</label>
-                            <input type="tel" class="form-control" maxlength="6" name="zipcode" value='<?php echo $zipcode; ?>' id="zipcode" required>
+                            <input type="tel" class="form-control" maxlength="6" name="zipcode" value='<?php echo $Zipcode; ?>' id="zipcode" required>
                             <p id="zipcodepara"></p>
                         </div>
                     </div>
@@ -87,12 +86,16 @@ include ('usereditsubmit.php');
                     </div>
                 </form>
                 <div class="col-md-8 top col-md-offset-1">
-                    <?php if (isset($error)) {
-                        echo "<div class='alert alert-danger'>" . $error . "</div>";
-                    } ?>
-<?php if (isset($message)) {
-    echo "<div class='alert alert-success'>" . $message . "</div>";
-} ?>
+                    <?php
+                    if (isset($Error)) {
+                        echo "<div class='alert alert-danger'>" . $Error . "</div>";
+                    }
+                    ?>
+                    <?php
+                    if (isset($Message)) {
+                        echo "<div class='alert alert-success'>" . $Message . "</div>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>

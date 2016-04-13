@@ -37,11 +37,11 @@ include ('submit.php');
 
                         <div class="form-group "><ul class="nav navbar-nav"><li><a>User LogIn</a></li> </ul></div>
                         <div class="form-group ">
-                            <input type="email" placeholder="User Email Address" name="userEmail" class="form-control left" >
+                            <input type="email" placeholder="User Email Address" name="userEmail" class="form-control left" required>
 
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="User Password" name="userPassword" class="form-control left">
+                            <input type="password" placeholder="User Password" name="userPassword" class="form-control left" required>
 
                         </div>
                         <div class="form-group"><input type="submit" class="btn btn-success left" name="loginSubmit" value="LogIn"></div>
@@ -53,10 +53,10 @@ include ('submit.php');
                     <form class="navbar-form navbar-right loginform" id="adminLogIn" method="post">
                         <div class="form-group "><ul class="nav navbar-nav"><li><a>Admin LogIn</a></li> </ul></div>
                         <div class="form-group ">
-                            <input type="email" placeholder="Admin Email Address" name="adminEmail" class="form-control left" >
+                            <input type="email" placeholder="Admin Email Address" name="adminEmail" class="form-control left" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Admin Password" name="adminPassword" class="form-control left">
+                            <input type="password" placeholder="Admin Password" name="adminPassword" class="form-control left" required>
                         </div>
                         <div class="form-group"><input type="submit" class="btn btn-success left" name="adminLogIn" value="LogIn"></div>
 
@@ -69,14 +69,14 @@ include ('submit.php');
         <div class="container">
             <div class="col-md-10 col-md-offset-2">
                 <?php
-                if (isset($error)) {
-                    echo "<div class='alert alert-danger'>" . $error . "</div>";
-                };
+                if (isset($Error)) {
+                    echo "<div class='alert alert-danger'>" . $Error . "</div>";
+                }
                 ?>
                 <?php
-                if (isset($message)) {
-                    echo "<div class='alert alert-success'>" . $message . "</div>";
-                };
+                if (isset($Message)) {
+                    echo "<div class='alert alert-success'>" . $Message . "</div>";
+                }
                 ?>
             </div>
             <h2 class="bottom top"><u>REGISTRATION</u>   <u>FORM</u></h2>
@@ -84,21 +84,21 @@ include ('submit.php');
                 <div class="form-group topmore">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="firstName">FIRST NAME:</label>
                     <div class="col-sm-6">
-                        <input type="text" id="firstName" name="firstName" class="form-control ">
+                        <input type="text" id="firstName" name="firstName" class="form-control " required>
                     </div>
                     <p id="firstnamepara"></p>
                 </div>
                 <div class="form-group top">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="lastName">LAST NAME:</label>
                     <div class="col-sm-6">
-                        <input type="text" id="lastName" name="lastName" class="form-control ">
+                        <input type="text" id="lastName" name="lastName" class="form-control " required>
                     </div>
                     <p id="lastnamepara"></p>
                 </div>
                 <div class="form-group top">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="emailAddress">EMAILADDRESS:</label>
                     <div class="col-sm-6">
-                        <input type="text" id="emailAddress" class="form-control " name="emailAddress" >
+                        <input type="text" id="emailAddress" class="form-control " name="emailAddress" required>
                     </div>
                     <p id="emailpara"></p>
                 </div>
@@ -106,7 +106,7 @@ include ('submit.php');
                 <div class="form-group top">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="password">PASSWORD:</label>
                     <div class="col-sm-6">
-                        <input type="password" maxlength="13" id="password" name="password" class="form-control ">
+                        <input type="password" maxlength="13" id="password" name="password" class="form-control " required>
                     </div>
                     <p id="passwordpara"></p>
                 </div>
@@ -114,7 +114,7 @@ include ('submit.php');
                 <div class="form-group top">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="confirmPassword">CONFIRM PASSWORD:</label>
                     <div class="col-sm-6">
-                        <input type="password" maxlength="13" id="confirmPassword" name="confirmPassword" class="form-control ">
+                        <input type="password" maxlength="13" id="confirmPassword" name="confirmPassword" class="form-control "  required>
                     </div>
                     <p id="confirmpasswordpara"></p>
                 </div>
@@ -122,7 +122,7 @@ include ('submit.php');
                 <div class="form-group top">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="mobileNumber">MOBILE NUMBER:</label>
                     <div class="col-sm-6">
-                        <input type="text" maxlength="13" id="mobileNumber" name="mobileNumber" class="form-control ">
+                        <input type="text" maxlength="10" id="mobileNumber" name="mobileNumber" class="form-control " required>
                     </div>
                     <p id="mobilepara"></p>
                 </div>

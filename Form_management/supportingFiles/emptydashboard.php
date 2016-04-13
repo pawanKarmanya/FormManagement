@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Forgot Password</title>
+        <title>Dashboard</title>
         
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         

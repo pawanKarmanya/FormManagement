@@ -35,7 +35,7 @@ google.maps.event.addListener(marker,'click',function() {
   map.setZoom(9);
   map.setCenter(marker.getPosition());
   });
-$("#myModal").on("shown.bs.modal", function () {
+$("#MapModal").on("shown.bs.modal", function () {
 
                     google.maps.event.trigger(googleMap, "resize");
                     //map.setCenter(google.maps.marker.getPosition());

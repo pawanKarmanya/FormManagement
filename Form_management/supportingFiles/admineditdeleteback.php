@@ -1,59 +1,69 @@
 <?php
 
 include ('connect.php');
-
 session_start();
+$Id = $_SESSION["id"];
+$QueryValidate = "select FirstName from UserTable where type='admin' and Id='$Id'";
+$ResultValidate = mysqli_query($Link, $QueryValidate);
+$RowValidate = mysqli_fetch_row($ResultValidate);
+if ($RowValidate) {
+    $Email = $_SESSION["email"];
+    $QueryUser = "select * from UserTable where EmailAddress='$Email'";
+    $ResultUser = mysqli_query($Link, $QueryUser);
+    $RowUser = mysqli_fetch_row($ResultUser);
+    if ($RowUser) {
 
-
-$id = $_SESSION["id"];
-
-$queryvalidate = "select FirstName from UserTable where type='admin' and Id='$id'";
-$resultvalidate = mysqli_query($link, $queryvalidate);
-$rowvalidate = mysqli_fetch_row($resultvalidate);
-if ($rowvalidate) {
-    $email = $_SESSION["email"];
-    $queryuser = "select * from UserTable where EmailAddress='$email'";
-    $resultuser = mysqli_query($link, $queryuser);
-    $rowuser = mysqli_fetch_row($resultuser);
-    if ($rowuser) {
-
-        $userFirstName = $rowuser[1];
-        $userLastName = $rowuser[2];
-        $userEmailAddress = $rowuser[3];
-        $userMobileNumber = $rowuser[4];
-        $userAddressOne = $rowuser[5];
-        $userAddressTwo = $rowuser[6];
-        $userCity = $rowuser[7];
-        $userState = $rowuser[8];
-        $userCountry = $rowuser[9];
-        $userZipCode = $rowuser[10];
+        $UserFirstName = $RowUser[1];
+        $UserLastName = $RowUser[2];
+        $UserEmailAddress = $RowUser[3];
+        $UserMobileNumber = $RowUser[4];
+        $UserAddressOne = $RowUser[5];
+        $UserAddressTwo = $RowUser[6];
+        $UserCity = $RowUser[7];
+        $UserState = $RowUser[8];
+        $UserCountry = $RowUser[9];
+        $UserZipCode = $RowUser[10];
     } else {
-        $error = "Could not retrieve the details try again";
+        $Error = "Could not retrieve the details try again";
     }
 
     if (isset($_POST["adminEditFront"])) {
 
-        $firstName = $_POST["firstName"];
-        $lastName = $_POST["lastName"];
-        $emailAddress = $_POST["emailAddress"];
-        $mobileNumber = $_POST["mobileNumber"];
-        $addressOne = $_POST["addressLineOne"];
-        $addressTwo = $_POST["addressLineTwo"];
-        $city = $_POST["city"];
-        $state = $_POST["state"];
-        $country = $_POST["country"];
-        $zipcode = $_POST["zipcode"];
-
-        $type = "User";
-        $query = "update UserTable set FirstName='$firstName', LastName='$lastName', EmailAddress='$emailAddress', MobileNumber='$mobileNumber', AddressLineOne='$addressOne', AddressLineTwo='$addressTwo', City='$city', State='$state', Country='$country', ZipCode='$zipcode' where EmailAddress='$email'";
-        $result = mysqli_query($link, $query);
-        if (!$result) {
-            $error = "Error while registering Try ones again";
+        $FirstName = $_POST["firstName"];
+        $LastName = $_POST["lastName"];
+        $EmailAddress = $_POST["emailAddress"];
+        $MobileNumber = $_POST["mobileNumber"];
+        $AddressOne = $_POST["addressLineOne"];
+        $AddressTwo = $_POST["addressLineTwo"];
+        $City = $_POST["city"];
+        $State = $_POST["state"];
+        $Country = $_POST["country"];
+        $Zipcode = $_POST["zipcode"];
+        $Type = "User";
+        
+        if (!preg_match("/^[a-zA-Z ]*$/", $FirstName)) {
+        $Error = "Characters and white space is allowed in First Name";
+    }
+    else if (!preg_match("/^[a-zA-Z ]*$/", $LastName)) {
+        $Error = "Characters and white space is allowed in Last Name";
+    }
+    else if (!filter_var($EmailAddress, FILTER_VALIDATE_EMAIL)) {
+        $Error = "Invalid Email Address";
+    }
+    
+    else if(!preg_match("/^[1-9][0-9]{9,9}$/", $MobileNumber)){
+        $Error="Phone number should be 10 number";
+    }
+    else{
+        $Query = "update UserTable set FirstName='$FirstName', LastName='$LastName', EmailAddress='$EmailAddress', MobileNumber='$MobileNumber', AddressLineOne='$AddressOne', AddressLineTwo='$AddressTwo', City='$City', State='$State', Country='$Country', ZipCode='$Zipcode' where EmailAddress='$Email'";
+        $Result = mysqli_query($Link, $Query);
+        if (!$Result) {
+            $Error = "Error while registering Try ones again";
         } else {
-            $message = $emailAddress . " Id is successfully Edited";
+            $Message = $EmailAddress . " Id is successfully Edited";
         }
     }
 } else {
     header("Location:../index.php");
-}
+}}
 ?>

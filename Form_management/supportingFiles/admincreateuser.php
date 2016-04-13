@@ -1,7 +1,7 @@
 <?php include ('adminusersubmit.php'); ?>
 <html>
     <head>
-        <title>User Login success page</title>
+        <title>Admin Create User</title>
 
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/dashboard.js"></script> 
@@ -10,7 +10,6 @@
     </head>
     <body>
         <nav class="admindashboard">
-
         </nav>
         <div class="container">
             <div class="row">
@@ -60,16 +59,18 @@
                     </div>
                 </form>
                 <div class="col-md-8 top col-md-offset-1">
-                    <?php if (isset($error)) {
-                        echo "<div class='alert alert-danger'>" . $error . "</div>";
-                    } ?>
-<?php if (isset($message)) {
-    echo "<div class='alert alert-success'>" . $message . "</div>";
-} ?>
+                    <?php
+                    if (isset($Error)) {
+                        echo "<div class='alert alert-danger'>" . $Error . "</div>";
+                    }
+                    ?>
+                    <?php
+                    if (isset($Message)) {
+                        echo "<div class='alert alert-success'>" . $Message . "</div>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </body>
-
-
 </html>

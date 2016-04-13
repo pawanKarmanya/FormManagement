@@ -22,7 +22,7 @@
                     <input type="password" class="form-control" name="oldPassword" id="oldPassword" required>
                 </div>
                 </div>
-            <div class="col-md-3"><?php if(isset($error)){echo "<div class='alert alert-danger'>".$error."</div>";}?></div>
+            <div class="col-md-3"><?php if(isset($Error)){echo "<div class='alert alert-danger'>".$Error."</div>";}?></div>
             <div class="col-md-5 col-md-offset-3">
             
                 <div class="form-group">
@@ -48,7 +48,7 @@
                 <input type="reset" class="btn btn-success" value="RESET">
             </div>
         </form>
-        <div class="col-md-8 col-md-offset-2"><?php if(isset($message)){echo "<div class='alert alert-success'>".$message."</div>";}?></div>
+        <div class="col-md-8 col-md-offset-2"><?php if(isset($Message)){echo "<div class='alert alert-success'>".$Message."</div>";}?></div>
         </div>
         </body>
 </html>

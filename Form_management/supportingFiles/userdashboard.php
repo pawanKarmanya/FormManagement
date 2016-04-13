@@ -2,10 +2,8 @@
 <html>
     <head>
         <title>User Dashboard</title>
-        
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        
 
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     </head>
@@ -33,12 +31,10 @@
                         </li> 
                         <li><a href="changepassword.php"><span class="glyphicon glyphicon-edit"></span> Change Password</a></li>
                     </ul>
-                    
                     <ul class="nav navbar-nav pull-right">
                         <li class="active"><a href="logout.php?id=1"><span class="glyphicon glyphicon-off"></span> LogOut</a></li>
-                       
+
                     </ul>
-                    
                 </div>
             </div>
         </nav>

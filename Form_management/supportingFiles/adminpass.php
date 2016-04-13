@@ -1,6 +1,6 @@
 <?php
 
-$emailAddress = $_POST["email"];
+$EmailAddress = $_POST["email"];
 session_start();
-$_SESSION["email"] = $emailAddress;
+$_SESSION["email"] = $EmailAddress;
 ?>

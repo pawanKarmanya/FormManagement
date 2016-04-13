@@ -1,16 +1,15 @@
 <?php
 include ('connect.php');
 session_start();
-$id=$_SESSION["id"];
+$Id=$_SESSION["id"];
+$QueryValidate = "select FirstName from UserTable where type='admin' and Id='$Id'";
+$ResultValidate = mysqli_query($Link, $QueryValidate);
+$RowValidate = mysqli_fetch_row($ResultValidate);
+if ($RowValidate) {
 
-$queryvalidate = "select FirstName from UserTable where type='admin' and Id='$id'";
-$resultvalidate = mysqli_query($link, $queryvalidate);
-$rowvalidate = mysqli_fetch_row($resultvalidate);
-if ($rowvalidate) {
-
-$queryAdminLogIn="select FirstName from UserTable where Id='$id'";
-$resultAdminLogIn=mysqli_query($link,$queryAdminLogIn);
-$row=mysqli_fetch_row($resultAdminLogIn);
+$QueryAdminLogIn="select FirstName from UserTable where Id='$Id'";
+$ResultAdminLogIn=mysqli_query($Link,$QueryAdminLogIn);
+$Row=mysqli_fetch_row($ResultAdminLogIn);
 }
 else {
     header("Location:../index.php");
@@ -18,7 +17,7 @@ else {
 ?>
 <html>
     <head>
-        <title>User Login success page</title>
+        <title>Admin Login success page</title>
         
         <script type="text/javascript" src="../js/jquery.js"></script>
         
@@ -30,7 +29,7 @@ else {
         </nav>
         <div class="container">
             <div class="col-md-3 col-md-offset-5">
-                <h3><?php echo $row[0] ;?></h3>
+                <h3><?php echo $Row[0] ;?></h3>
             </div>
             <div class="col-md-10 col-md-offset-2">
                 <h1>Login Successful <a href="adminLogin.php">Click me</a></h1>

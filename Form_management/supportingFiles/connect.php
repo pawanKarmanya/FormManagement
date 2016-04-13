@@ -1,3 +1,3 @@
 <?php
-$link=mysqli_connect("localhost","dbuser","123","FormManagement");
+$Link=mysqli_connect("localhost","dbuser","123","FormManagement");
 ?>

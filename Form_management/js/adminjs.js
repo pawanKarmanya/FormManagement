@@ -3,9 +3,6 @@ $(document).ready(function() {
     $('#example').DataTable( {
         data: dataSet,
         
-        "scrollY":        "500px",
-        "scrollCollapse": true,
-        "paging":         false,
         columns: [
             { title: "First Name" },
             { title: "Last Name" },

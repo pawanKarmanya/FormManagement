@@ -1,45 +1,41 @@
-
-
 <?php
 
 include('connect.php');
 session_start();
-$id = $_SESSION["id"];
-$queryvalidate = "select FirstName from UserTable where type='admin' and Id='$id'";
-$resultvalidate = mysqli_query($link, $queryvalidate);
-$rowvalidate = mysqli_fetch_row($resultvalidate);
-if ($rowvalidate) {
+$Id = $_SESSION["id"];
+$QueryValidate = "select FirstName from UserTable where type='admin' and Id='$Id'";
+$ResultValidate = mysqli_query($Link, $QueryValidate);
+$RowValidate = mysqli_fetch_row($ResultValidate);
+if ($RowValidate) {
 
-
-    $emailAddress = $_SESSION["email"];
-    $query = "select * from UserTable where EmailAddress='$emailAddress'";
-    $result = mysqli_query($link, $query);
-    $row = mysqli_fetch_row($result);
-    $firstName = $row[1];
-    $lastName = $row[2];
-    $mobileNumber = $row[4];
-    $addressLineOne = $row[5];
-    $addressLineTwo = $row[6];
-
-    $city = $row[7];
-    $state = $row[8];
-    $country = $row[9];
-    $zipcode = $row[10];
-    $variable = "";
-    $array = explode(",", $addressLineTwo);
-    foreach ($array as $x) {
-        $variable.=$x;
+    $EmailAddress = $_SESSION["email"];
+    $Query = "select * from UserTable where EmailAddress='$EmailAddress'";
+    $Result = mysqli_query($Link, $Query);
+    $Row = mysqli_fetch_row($Result);
+    $FirstName = $Row[1];
+    $LastName = $Row[2];
+    $MobileNumber = $Row[4];
+    $AddressLineOne = $Row[5];
+    $AddressLineTwo = $Row[6];
+    $City = $Row[7];
+    $State = $Row[8];
+    $Country = $Row[9];
+    $Zipcode = $Row[10];
+    $Variable = "";
+    $Array = explode(",", $AddressLineTwo);
+    foreach ($Array as $X) {
+        $Variable.=$X;
     }
-    $variable.=$city;
+    $Variable.=$City;
     if (isset($_POST["adminEdit"])) {
         header("Location:admineditdeletefront.php");
     }
     if (isset($_POST["adminDelete"])) {
-        $email = $_SESSION["email"];
-        $deletequery = "delete from UserTable where EmailAddress='$email'";
-        $deleteresult = mysqli_query($link, $deletequery);
-        if ($deleteresult) {
-            $error = "Profile Successfully Deleted";
+        $Email = $_SESSION["email"];
+        $DeleteQuery = "delete from UserTable where EmailAddress='$Email'";
+        $DeleteResult = mysqli_query($link, $DeleteQuery);
+        if ($DeleteResult) {
+            $Error = "Profile Successfully Deleted";
         }
     }
 } else {

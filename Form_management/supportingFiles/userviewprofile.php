@@ -1,28 +1,28 @@
 <?php
 include('connect.php');
 session_start();
-$id = $_SESSION["id"];
-if ($id) {
-    $query = "select * from UserTable where Id='$id'";
-    $result = mysqli_query($link, $query);
-    $row = mysqli_fetch_row($result);
-    $firstName = $row[1];
-    $lastName = $row[2];
-    $emailAddress = $row[3];
-    $mobileNumber = $row[4];
-    $addressLineOne = $row[5];
-    $addressLineTwo = $row[6];
-    $city = $row[7];
-    $state = $row[8];
-    $country = $row[9];
-    $zipcode = $row[10];
+$Id = $_SESSION["id"];
+if ($Id) {
+    $Query = "select * from UserTable where Id='$Id'";
+    $Result = mysqli_query($Link, $Query);
+    $Row = mysqli_fetch_row($Result);
+    $FirstName = $Row[1];
+    $LastName = $Row[2];
+    $EmailAddress = $Row[3];
+    $MobileNumber = $Row[4];
+    $AddressLineOne = $Row[5];
+    $AddressLineTwo = $Row[6];
+    $City = $Row[7];
+    $State = $Row[8];
+    $Country = $Row[9];
+    $Zipcode = $Row[10];
 
-    $variable = "";
-    $array = explode(",", $addressLineTwo);
-    foreach ($array as $x) {
-        $variable.=$x;
+    $Variable = "";
+    $Array = explode(",", $AddressLineTwo);
+    foreach ($Array as $X) {
+        $Variable.=$X;
     }
-    $variable.=$city;
+    $Variable.=$City;
 } else {
     header("Location:../index.php");
 }
@@ -40,7 +40,7 @@ if ($id) {
         <script type="text/javascript">
 
             var geocoder = new google.maps.Geocoder();
-            var address = "<?php echo $variable; ?>";
+            var address = "<?php echo $Variable; ?>";
         </script>
         <script src="../js/map.js" type="text/javascript"></script>
 
@@ -56,61 +56,61 @@ if ($id) {
                     <div class="col-md-12 topmore">
                         <div class="col-md-3 col-md-offset-2">
                             <label>First Name:</label>
-                            <input type="text" class="form-control" value="<?php echo $firstName; ?>" disabled>
+                            <input type="text" class="form-control" value="<?php echo $FirstName; ?>" disabled>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>Last Name:</label>
-                            <input type="text" class="form-control" value='<?php echo $lastName; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $LastName; ?>' disabled>
                         </div>
                     </div>
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>Email Address:</label>
-                            <input type="text" class="form-control" value='<?php echo $emailAddress; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $EmailAddress; ?>' disabled>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>Mobile Number:</label>
-                            <input type="text" class="form-control" value='<?php echo $mobileNumber; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $MobileNumber; ?>' disabled>
                         </div>
                     </div>
 
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>Address Line 1:</label>
-                            <textarea class="form-control" name="addressLineOne" disabled><?php echo $addressLineOne; ?></textarea>
+                            <textarea class="form-control" name="addressLineOne" disabled><?php echo $AddressLineOne; ?></textarea>
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>Address Line 2:</label>
-                            <textarea class="form-control" name="addressLineTwo" disabled><?php echo $addressLineTwo; ?></textarea>
+                            <textarea class="form-control" name="addressLineTwo" disabled><?php echo $AddressLineTwo; ?></textarea>
                         </div>
                     </div>
 
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>City:</label>
-                            <input type="text" class="form-control" value='<?php echo $city; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $City; ?>' disabled>
 
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>State:</label>
-                            <input type="text" class="form-control" value='<?php echo $state; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $State; ?>' disabled>
 
                         </div>
                     </div>
                     <div class="col-md-12 top">
                         <div class="col-md-3 col-md-offset-2">
                             <label>Country:</label>
-                            <input type="text" class="form-control" value='<?php echo $country; ?>' disabled>
+                            <input type="text" class="form-control" value='<?php echo $Country; ?>' disabled>
 
                         </div>
 
                         <div class="col-md-3 col-md-offset-1">
                             <label>ZipCode:</label>
-                            <input type="tel" class="form-control" value='<?php echo $zipcode; ?>' disabled>
+                            <input type="tel" class="form-control" value='<?php echo $Zipcode; ?>' disabled>
 
                         </div>
                     </div>
@@ -120,17 +120,17 @@ if ($id) {
         </div>
         <div class="col-md-2 col-md-offset-5 topmore">
 
-            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-map-marker"></span> Location</button>
+            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#MapModal"><span class="glyphicon glyphicon-map-marker"></span> Location</button>
         </div>
 
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal fade" id="MapModal" role="dialog">
             <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Location</h4>
                     </div>
                     <div class="modal-body">
 
