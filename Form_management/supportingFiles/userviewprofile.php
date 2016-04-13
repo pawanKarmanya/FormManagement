@@ -16,13 +16,13 @@ if ($id) {
     $state = $row[8];
     $country = $row[9];
     $zipcode = $row[10];
-    
-  $variable="";
-  $array=explode(",",$addressLineTwo);
-  foreach($array as $x){
-      $variable.=$x;
-  }
-  $variable.=$city;
+
+    $variable = "";
+    $array = explode(",", $addressLineTwo);
+    foreach ($array as $x) {
+        $variable.=$x;
+    }
+    $variable.=$city;
 } else {
     header("Location:../index.php");
 }
@@ -42,8 +42,8 @@ if ($id) {
             var geocoder = new google.maps.Geocoder();
             var address = "<?php echo $variable; ?>";
         </script>
-      <script src="../js/map.js" type="text/javascript"></script>
-      
+        <script src="../js/map.js" type="text/javascript"></script>
+
     </head>
     <body >
         <nav class="userdashboard">
@@ -133,9 +133,9 @@ if ($id) {
                         <h4 class="modal-title">Modal Header</h4>
                     </div>
                     <div class="modal-body">
-                        
-<div id="googleMap" style="height:500px;"></div>
-                        
+
+                        <div id="googleMap" style="height:500px;"></div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

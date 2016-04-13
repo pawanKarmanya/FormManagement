@@ -1,4 +1,4 @@
-<?php 
+<?php
 include ('submit.php');
 ?>
 <!DOCTYPE html>
@@ -34,22 +34,22 @@ include ('submit.php');
                     </ul>
 
                     <form class="navbar-form navbar-right loginform" method="post" id="userLogIn">
-                       
+
                         <div class="form-group "><ul class="nav navbar-nav"><li><a>User LogIn</a></li> </ul></div>
                         <div class="form-group ">
                             <input type="email" placeholder="User Email Address" name="userEmail" class="form-control left" >
-                            
+
                         </div>
                         <div class="form-group">
                             <input type="password" placeholder="User Password" name="userPassword" class="form-control left">
-                            
+
                         </div>
                         <div class="form-group"><input type="submit" class="btn btn-success left" name="loginSubmit" value="LogIn"></div>
-                       
+
                         <div class="form-group">  <p id="forgotpara"><a href="supportingFiles/forgotpassword.php">Forgot Password</a></p></div>
                     </form>
-                        
-                    
+
+
                     <form class="navbar-form navbar-right loginform" id="adminLogIn" method="post">
                         <div class="form-group "><ul class="nav navbar-nav"><li><a>Admin LogIn</a></li> </ul></div>
                         <div class="form-group ">
@@ -59,20 +59,24 @@ include ('submit.php');
                             <input type="password" placeholder="Admin Password" name="adminPassword" class="form-control left">
                         </div>
                         <div class="form-group"><input type="submit" class="btn btn-success left" name="adminLogIn" value="LogIn"></div>
-                        
+
                     </form>
-                    
-                    
+
+
                 </div>
             </div>
         </nav>
         <div class="container">
             <div class="col-md-10 col-md-offset-2">
-                <?php if(isset($error)){
-                echo "<div class='alert alert-danger'>".$error."</div>";};
+                <?php
+                if (isset($error)) {
+                    echo "<div class='alert alert-danger'>" . $error . "</div>";
+                };
                 ?>
-                <?php if(isset($message)){
-                echo "<div class='alert alert-success'>".$message."</div>";};
+                <?php
+                if (isset($message)) {
+                    echo "<div class='alert alert-success'>" . $message . "</div>";
+                };
                 ?>
             </div>
             <h2 class="bottom top"><u>REGISTRATION</u>   <u>FORM</u></h2>
@@ -114,7 +118,7 @@ include ('submit.php');
                     </div>
                     <p id="confirmpasswordpara"></p>
                 </div>
-                
+
                 <div class="form-group top">
                     <label class="control-label col-sm-2 col-sm-offset-1" for="mobileNumber">MOBILE NUMBER:</label>
                     <div class="col-sm-6">
@@ -135,7 +139,7 @@ include ('submit.php');
 
 
 
-        
+
 
     </body>
 

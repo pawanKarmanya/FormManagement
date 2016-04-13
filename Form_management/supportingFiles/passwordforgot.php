@@ -39,9 +39,9 @@ $mail->Password   = "pawan@123";            // GMAIL password
 
  
 
-$mail->SetFrom('pawankumar.s@karmanya.co.in', 'pavan');
-$mail->AddReplyTo("pawankumar.s@karmanya.co.in","pavan");
-$mail->Subject    = "Registration Complete";
+$mail->SetFrom('pawankumar.s@karmanya.co.in', 'Form Management');
+$mail->AddReplyTo("pawankumar.s@karmanya.co.in","Form Management");
+$mail->Subject    = "Password";
 $mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
 $mail->MsgHTML($body);
 $address = $email;

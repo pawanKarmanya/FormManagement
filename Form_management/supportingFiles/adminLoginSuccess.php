@@ -2,9 +2,19 @@
 include ('connect.php');
 session_start();
 $id=$_SESSION["id"];
+
+$queryvalidate = "select FirstName from UserTable where type='admin' and Id='$id'";
+$resultvalidate = mysqli_query($link, $queryvalidate);
+$rowvalidate = mysqli_fetch_row($resultvalidate);
+if ($rowvalidate) {
+
 $queryAdminLogIn="select FirstName from UserTable where Id='$id'";
 $resultAdminLogIn=mysqli_query($link,$queryAdminLogIn);
 $row=mysqli_fetch_row($resultAdminLogIn);
+}
+else {
+    header("Location:../index.php");
+}
 ?>
 <html>
     <head>

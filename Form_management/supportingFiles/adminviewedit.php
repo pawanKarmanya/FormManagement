@@ -12,8 +12,8 @@
 
             var geocoder = new google.maps.Geocoder();
             var address = "<?php echo $variable; ?>";
-</script>
-<script src="../js/map.js" type="text/javascript"></script>
+        </script>
+        <script src="../js/map.js" type="text/javascript"></script>
 
 
     </head>
